@@ -1,0 +1,747 @@
+/* تنسيقات عامة للموقع */
+html {
+    scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  direction: rtl; /* لجعل الاتجاه من اليمين للشمال للغة العربية */
+}
+#sponsors {
+  scroll-margin-top: 50px; 
+}
+
+/* تنسيق الناف بار */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: #efe9e9;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-bottom: 3px solid #e60000; 
+  
+  position: fixed;   
+  /* تثبيت الناف بار في مكان ثابت بالشاشة */
+  top: 0;            
+  left: 0;
+  width: 95%;       
+  z-index: 1000;     
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+}
+
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-brand h2 {
+  margin: 0;
+  color: #111;
+  font-size: 22px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #444;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #e60000;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* صندوق البحث */
+.search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-box input {
+  padding: 8px 35px 8px 15px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  outline: none;
+}
+
+.search-icon {
+  position: absolute;
+  right: 10px;
+  color: #888;
+}
+
+/* أيقونة السلة والعداد */
+.cart-icon-wrapper {
+  position: relative;
+  cursor: pointer;
+  color: #222;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  background-color: #e60000;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 2px 6px;
+}
+.brand-icon{
+    mix-blend-mode: multiply;
+}
+/*---------------------------------------------------------------sponsor-----------*/
+.sponsors-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1000px;
+    margin: -50px auto 50px auto;
+    padding: 20px;
+    gap: 25px;
+}
+/* كارت الراعي */
+.sponsor-card {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 20px;
+  height: 120px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.sponsors-container {/*............................................*/
+  position: relative;
+  padding: 60px 20px;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Parallax effect: بيدي إحساس بالعمق أثناء السكرول */
+  margin-bottom: -50px;
+}
+
+/* تغيير لون كلمة الرعاة الرسميون للون الأبيض ليبرز فوق التعتيم */
+.sponsors-container .title {/*...................................*/
+  color: #ffffff;
+}
+.title{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cairo', sans-serif;
+    top: -40px;
+}
+.title::before,
+.title::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60vw; /* بيمتد بعرض الشاشة بالكامل */
+  height: 3px; /* سمك الخط */
+  background-color: #e60000; /* أحمر زملكاوي */
+  z-index: -1;
+}
+
+/* الخط الأول تحت العنوان بمسافة مناسبة */
+.title::before {
+  bottom: -15px; 
+}
+
+/* الخط الثاني تحته بمسافة 6 بكسل ليعطي شكل الخطين المزدوجين */
+.title::after {
+  bottom: -21px;
+}
+.sponsor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* تنسيق صورة الراعي داخل الكارت */
+.sponsor-card img {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain; /* يحافظ على نسبة أبعاد الصورة بدون تمطيط */
+  mix-blend-mode: multiply; /* لإخفاء الخلفية البيضاء إن وجدت */
+  object-fit: contain;
+}
+/*---------------------------------------االمنتجات----------------------------------------------------------*/
+/* قسم المنتجات بالكامل بالخلفية */
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 60px 20px;
+  margin-bottom: -90px;
+  /* خلفية الجماهير مع التعتيم لجميع المنتجات */
+  background-image: linear-gradient( rgba(0, 0, 0, 0.1)), url('./assets/fan2.avif');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* تأثير Parallax يثبت الخلفية أثناء السكرول */
+}
+
+/* شكل الكارت أبيض ونظيف فوق الخلفية */
+.product-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  width: 280px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+}
+
+/* صورة المنتج داخل الكارت */
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+/* تنسيق الكارت ليكون حاوية للصورة (Relative) */
+
+.product-card {
+  position: relative; /* ضروري عشان الصورة Absolute */
+  background-color: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 16px;
+  width: 360px;
+  height: 420px; /* تحكم في الارتفاع الكلي للكارت */
+  overflow: hidden; /* يضمن عدم خروج حواف الصورة عن حواف الكارت */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  /* عمل هامش من الأسفل فقط للبيانات */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* يضع محتوى الـ flex (البيانات) في الأسفل */
+  padding-bottom: 20px; /* مسافة مريحة من الأسفل للبيانات */
+  margin-top: 100px;
+  margin-bottom: 50px;
+
+}
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* 2. تجعل الصورة تملاً الكارت كله خلف البيانات (Absolute) */
+.product-card img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* تمط الصورة لتملأ الكارت مع الحفاظ على الأبعاد */
+  z-index: 1; /* توضع الصورة في الطبقة السفلى */
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.05); /* تأثير زوم بسيط للصورة عند الهوفر */
+}
+
+/* تنسيق البيانات (الاسم، السعر، الأزرار) لتظهر فوق الصورة وفي الأسفل */
+.product-card h3,
+.product-card .price,
+.product-card .card-actions {
+  position: relative; /* ضروري لتظهر فوق الصورة Absolute */
+  z-index: 2; /* توضع فوق الصورة */
+  margin-left: 15px; 
+  margin-right: 15px;
+  text-align: right; 
+}
+
+/* تنسيق العنوان والسعر */
+.product-card h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #ffffff; /* أبيض عشان يظهر فوق الصورة (لو غامقة) */
+  margin-bottom: 5px;
+  /* إضافة تأثير ظل خفيف للنص ليظهر بوضوح فوق أي صورة */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.product-card .price {
+  font-size: 18px;
+  font-weight: 800;
+  color: #e60000; 
+  margin-bottom: 15px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* تنسيق حاوية الأزرار */
+.card-actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* تنسيق الأزرار (تصغيرها قليلاً) */
+.card-actions button {
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 8px;
+  flex: 1;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-add {
+  background-color: rgba(255, 255, 255, 0.9); 
+  color: #333;
+}
+.btn-add:hover{
+  background-color: #0d0d0e;
+  color: white;
+}
+.btn-buy {
+  background-color: #e60000;
+  color: #ffffff;
+}
+.btn-buy:hover{
+  background-color: #0d0d0e;
+}
+/*------------------------footer-------------------------------------------------*/
+/* تنسيق الفوتر الرئيسي */
+.footer {
+  background-color: hsl(0, 49%, 31%);
+  color: #ffffff;
+  padding: 40px 20px 20px 20px;
+  margin-top: 50px;
+}
+
+.footer_container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.footer_container h2 {
+  color: #f1e9e9; 
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* محاذاة العنوان والسوشيال ميديا في نفس السطر */
+.address-social {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* لضمان التنسيق على شاشات الموبايل */
+  gap: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #333333;
+}
+
+.address p {
+  font-size: 18px;
+  color: #fcf8f8;
+  margin: 0;
+}
+
+.social-media {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.social-media h3 {
+  font-size: 18px;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.social-icons a {
+  color: #ffffff;
+  font-size: 28px; /* تكبير حجم الأيقونات */
+  transition: color 0.3s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+.social-icons a:hover {
+  color: #e60000; /* التغيير للون الأحمر عند التحويم */
+  transform: translateY(-3px);
+}
+
+/* حقوق النشر أسفل الفوتر */
+.footer-rights {
+  text-align: center;
+  font-size: 16px;
+  color: #e6dfdf;
+  padding-top: 10px;
+}
+/*-------------------------------cart------------------------------------*/
+/* صفحة السلة الفارغة */
+.empty-cart-container {
+  text-align: center;
+  padding: 80px 20px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.empty-icon {
+  font-size: 60px;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.btn-return {
+  background-color: #e60000;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+/* صفحة الشراء الرئيسية */
+.checkout-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.checkout-title {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #222;
+  margin-top: 70px;
+}
+
+.checkout-container {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+/* تقسيم الأوراق والمعاينة */
+.order-summary-card, .checkout-form-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border: 1px solid #eee;
+}
+
+.order-summary-card {
+  flex: 1;
+}
+
+.checkout-form-card {
+  flex: 1.3;
+}
+
+/* عناصر السلة المصغرة */
+.cart-items-list {
+  max-height: 300px;
+  overflow-y: auto;
+  margin: 20px 0;
+  padding-right: 5px;
+}
+
+.cart-item-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.cart-item-img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 6px;
+  background: #f9f9f9;
+}
+
+.cart-item-info {
+  flex: 1;
+}
+
+.cart-item-info h4 {
+  margin: 0 0 5px 0;
+  font-size: 14px;
+}
+
+.cart-item-price {
+  color: #e60000;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.btn-remove {
+  background: none;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.btn-remove:hover {
+  color: #e60000;
+}
+
+/* الحسابات الإجمالية */
+.price-breakdown {
+  margin-top: 20px;
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.total-row {
+  font-weight: bold;
+  font-size: 16px;
+  color: #222;
+  margin-top: 10px;
+}
+
+/* الاستمارة وطرق الدفع */
+.form-section {
+  margin-bottom: 25px;
+}
+
+.form-section h3 {
+  font-size: 16px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.payment-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.payment-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.payment-card.active {
+  border-color: #e60000;
+  background-color: #fff5f5;
+}
+
+.payment-card p {
+  margin: 2px 0 0 0;
+  font-size: 12px;
+  color: #666;
+}
+
+.payment-icon {
+  font-size: 20px;
+  color: #e60000;
+}
+
+.btn-confirm-order {
+  width: 100%;
+  padding: 14px;
+  background-color: #e60000;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-confirm-order:hover {
+  background-color: #cc0000;
+}
+.hero-banner .herobtn{
+ padding: '12px 25px';
+ background-color: #e60000;
+color: #fff;
+ border: 'none';
+ border-radius: 15px;
+cursor: 'pointer';
+font-weight: 600;
+height: 50px;
+width: 150px;
+
+}
+.herobtn:hover{
+  background-color: #f3f3f4;
+  color: rgb(11, 11, 11);
+}
+/*------------------------------------------------------------------------------------------*/
+/* قسم البطولات */
+.trophies-section {
+  background: #111111;
+  color: #ffffff;
+  padding: 60px 20px;
+  text-align: center;
+  border-top: 2px solid #e60000;
+  border-bottom: 2px solid #e60000;
+}
+
+.trophies-title {
+  font-size: 28px;
+  color: #ffffff;
+  margin-bottom: 40px;
+  position: relative;
+  display: inline-block;
+}
+
+.trophies-title::after {
+  content: '';
+  display: block;
+  width: 60%;
+  height: 3px;
+  background-color: #e60000;
+  margin: 10px auto 0 auto;
+  border-radius: 2px;
+}
+
+.trophies-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.trophy-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 25px 20px;
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.trophy-card:hover {
+  transform: translateY(-8px);
+  border-color: #d4af37; /* لون ذهبي */
+  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.2);
+}
+
+.trophy-icon-wrapper {
+  margin-bottom: 12px;
+}
+
+.trophy-icon {
+  width: 48px;
+  height: 48px;
+  color: #d4af37; /* لون ذهبي ملائم للكأس */
+}
+
+.trophy-count {
+  font-size: 32px;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0 0 5px 0;
+}
+
+.trophy-name {
+  font-size: 13px;
+  color: #cccccc;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* التجاوب للموبايل */
+@media (max-width: 600px) {
+  .trophy-card {
+    width: 130px;
+    padding: 18px 10px;
+  }
+  .trophy-count {
+    font-size: 26px;
+  }
+  .trophy-name {
+    font-size: 12px;
+  }
+}
+
+/* التجاوب مع شاشات الموبايل */
+@media (max-width: 768px) {
+  .checkout-container {
+    flex-direction: column;
+  }
+  
+  .order-summary-card, .checkout-form-card {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+/* التجاوب مع الشاشات الصغيرة */
+@media (max-width: 768px) {
+  .sponsors-grid {
+    grid-template-columns: repeat(2, 1fr); /* عنصرين في السطر للموبايل والتابلت */
+  }
+}
